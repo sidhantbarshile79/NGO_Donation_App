@@ -44,6 +44,7 @@
                     <s:url var="home_url" value="/index"/>
                     <s:url var="about_url" value="/about"/>
                     <s:url var="camp_url" value="/campaign"/>
+                    <s:url var="team_url" value="/team"/>
                     <s:url var="contact_url" value="/contact"/>
                     <s:url var="login_url" value="/login"/>
                     <s:url var="donation_url" value="/donation_form"/>
@@ -51,6 +52,7 @@
                     <s:url var="donor_url" value="/donors"/>
                     <s:url var="donation_url" value="/donation"/>
                     <s:url var="link_url" value="/link"/>
+                    <s:url var="user_login" value="/user_dashboard"/>
                     
                     
                     <li class="nav-item">
@@ -61,6 +63,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${camp_url}">Campaign</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${team_url}">Our Team</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${contact_url}">Contact US</a>
@@ -98,9 +103,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="donation_form">Donate</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="campaign">Campaign</a>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="logout">Logout</a>
                     </li>

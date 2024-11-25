@@ -25,7 +25,7 @@
                     <th>Phone</th>
                     <th>Role</th>
                     <th>Status</th>
-                    <th>Actions</th>
+                    <!-- <th>Actions</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -52,7 +52,7 @@
                                 </c:otherwise>
                             </c:choose>
                         </td>
-                        <td>
+                        <%-- <td>
                             <a href="/admin/user/${user.userId}" class="btn btn-info btn-sm">View</a>
                             <a href="/admin/user/edit/${user.userId}" class="btn btn-primary btn-sm">Edit</a>
                             <a href="/admin/user/delete/${user.userId}" class="btn btn-danger btn-sm" 
@@ -71,7 +71,7 @@
                                     </c:otherwise>
                                 </c:choose>
                             </form>
-                        </td>
+                        </td> --%>
                     </tr>
                     <c:set var="totalUsers" value="${totalUsers + 1}" />
 

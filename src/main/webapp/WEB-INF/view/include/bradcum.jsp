@@ -1,5 +1,5 @@
 
-<div class="container-flex">
+<div class="container-fluid">
     <div class="row">
         <div class="welcome_area">
             <h5>NGO Donation</h5>
@@ -14,12 +14,13 @@
 
 <style>
     .welcome_area {
-        background-image: url(${pageContext.request.contextPath}/static/images/breadcum.jpg);
+        background-image: url(${pageContext.request.contextPath}/static/images/breadcum1.jpg);
         height: 200px;
         width: 100%;
         background-size: cover;
         background-position: center;
         display: flex;
+        
         flex-direction: column;
         justify-content: center;
         align-items: center;

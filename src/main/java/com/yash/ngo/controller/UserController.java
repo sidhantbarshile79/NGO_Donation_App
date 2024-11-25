@@ -59,7 +59,11 @@ public class UserController {
 		return "link"; 
 	}
 	
-	
+	@RequestMapping(value = "/team")
+	public String Team() 
+	{    
+		return "team"; 
+	}
     
     
 

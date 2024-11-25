@@ -23,8 +23,12 @@ footer {
 }
 	
 </style>
- 
- 
+ 					
+ 					<s:url var="about_url" value="/about"/>
+                    <s:url var="camp_url" value="/campaign"/>
+                    <s:url var="contact_url" value="/contact"/>
+                    <s:url var="login_url" value="/login"/>
+                    <s:url var="home_url" value="/index"/>
  
  
  
@@ -41,20 +45,20 @@ footer {
                 </p>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5 class="text-uppercase">Links</h5>
+            <div class="col-lg-4 col-md-6 mb-4" >
+                <h5 class="text-uppercase">Useful Links</h5>
                 <ul class="list-unstyled">
                     <li>
-                        <a href="/index" class="text-dark">Home</a>
+                        <a href="${home_url}" class="text-dark">Home</a>
                     </li>
                     <li>
-                        <a href="/about" class="text-dark">About Us</a>
+                        <a href="${about_url}" class="text-dark">About Us</a>
                     </li>
                     <li>
-                        <a href="/contact" class="text-dark">Contact Us</a>
+                        <a href="${contact_url}" class="text-dark">Contact Us</a>
                     </li>
                     <li>
-                        <a href="/reg_form" class="text-dark">Login/ Register</a>
+                        <a href="${login_url}" class="text-dark">Login/ Register</a>
                     </li>
                 </ul>
             </div>
