@@ -1,11 +1,11 @@
 package com.yash.ngo.test;
 
-import com.yash.ngo.config.SpringRootConfig;
-import com.yash.ngo.dao.UserDAO;
-import com.yash.ngo.domain.User;
-import com.yash.ngo.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.yash.ngo.config.SpringRootConfig;
+import com.yash.ngo.domain.User;
+import com.yash.ngo.service.UserService;
 
 public class TestUserServiceRegister {
     public static void main(String[] args){

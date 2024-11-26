@@ -1,17 +1,18 @@
 package com.yash.ngo.rm;
 
 
-import com.yash.ngo.domain.Campaign;
-import org.springframework.jdbc.core.RowMapper;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.yash.ngo.domain.Campaign;
 
 public class CampaignRowMapper implements RowMapper<Campaign> {
     @Override
     public Campaign mapRow(ResultSet rs, int i) throws SQLException {
         Campaign cmp = new Campaign();
-        
+
         cmp.setCampaignId(rs.getInt("campaignId"));
         cmp.setTitle(rs.getString("title"));
         cmp.setDescription(rs.getString("description"));

@@ -2,7 +2,7 @@ package com.yash.ngo.domain;
 
 import java.util.Date;
 
-public class Donation 
+public class Donation
 {
     private Integer donationId;
     private Integer userId;
@@ -12,7 +12,7 @@ public class Donation
     private String aadhaarNumber;
     private String panCardNumber;
     private String donationType;
-    
+
 	public Donation() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -87,7 +87,7 @@ public class Donation
 		return "Donation [donationId=" + donationId + ", userId=" + userId + ", name=" + name + ", donationAmount="
 				+ donationAmount + ", donationDate=" + donationDate + ", aadhaarNumber=" + aadhaarNumber
 				+ ", panCardNumber=" + panCardNumber + ", donationType=" + donationType + "]";
-	} 
-    
-    
+	}
+
+
 }

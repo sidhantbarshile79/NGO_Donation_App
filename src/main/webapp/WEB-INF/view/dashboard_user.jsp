@@ -70,7 +70,7 @@
     <div class="container mt-4">
         <!-- Welcome Banner -->
         <div class="welcome-banner">
-            <h2>Welcome, ${user.name}  , ${user.userId}!</h2>
+            <h2>Welcome, ${user.name}...!</h2>
             <p>Thank you for being a valuable member of our community.</p>
         </div>
         

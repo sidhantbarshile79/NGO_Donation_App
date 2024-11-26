@@ -10,7 +10,7 @@ import com.yash.ngo.domain.Campaign;
 
 @Service
 public class CampaignServiceImpl implements CampaignService {
-    
+
     @Autowired
     private CampaignDAO campaignDAO;
 
@@ -27,7 +27,7 @@ public class CampaignServiceImpl implements CampaignService {
 
 	@Override
 	public int getCountCampaign() {
-		
+
 		return campaignDAO.countCampaign();
 	}
 }

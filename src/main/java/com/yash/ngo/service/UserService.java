@@ -1,15 +1,15 @@
 package com.yash.ngo.service;
 
+import java.util.List;
+
 import com.yash.ngo.domain.User;
 import com.yash.ngo.exception.UserBlockedException;
 
-import java.util.List;
-
 public interface UserService {
-	
+
 	public Integer getUserCount();
 	public List<User> getRecentUsers(int limit);
-	
+
     public static final Integer LOGIN_STATUS_ACTIVE=1;
     public static final Integer LOGIN_STATUS_BLOCKED=2;
 

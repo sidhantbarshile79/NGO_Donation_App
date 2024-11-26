@@ -1,5 +1,19 @@
 package com.yash.ngo.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.yash.ngo.command.LoginCommand;
 import com.yash.ngo.command.UserCommand;
 import com.yash.ngo.domain.User;
@@ -7,65 +21,53 @@ import com.yash.ngo.exception.UserBlockedException;
 import com.yash.ngo.service.CampaignService;
 import com.yash.ngo.service.DonationService;
 import com.yash.ngo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DuplicateKeyException;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 @Controller
-public class UserController {
+public class UserController 
+{
 
     @Autowired
     private UserService userService;
-    
+
     @Autowired
     private DonationService donationService;
-    
+
     @Autowired
     private CampaignService campaignService;
-    
-    
-    
-    
+
+
+
 
     @RequestMapping(value = {"/", "/index"})
     public String index(Model model) {
         model.addAttribute("command", new LoginCommand());
         return "index"; // /WEB-INF/view/index.jsp
     }
-    
-    
 
-	
+
+
+
 	@RequestMapping(value = "/about")
-	public String About() 
-	{    
-		return "about"; 
+	public String About()
+	{
+		return "about";
 	}
-    
-    
-	
+
+
+
 	@RequestMapping(value = "/link")
-	public String Lin() 
-	{    
-		return "link"; 
+	public String Lin()
+	{
+		return "link";
 	}
-	
+
 	@RequestMapping(value = "/team")
-	public String Team() 
-	{    
-		return "team"; 
+	public String Team()
+	{
+		return "team";
 	}
-    
-    
+
+
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String handleLogin(@ModelAttribute("command") LoginCommand cmd, Model model, HttpSession session) {
@@ -102,21 +104,21 @@ public class UserController {
         session.invalidate();
         return "redirect:index?act=lo";
     }
-    
-    
+
+
     //logout from user dashboard
     @RequestMapping(value = {"user_dashboard/logout"})
     public String logoutUser(HttpSession session) {
         session.invalidate();
         return "redirect:/login";
     }
-    
-    
+
+
     @RequestMapping(value = "/login")
-    public String login(Model model) 
+    public String login(Model model)
     {
         model.addAttribute("command", new User()); // Assuming LoginForm is your form backing object
-        return "login"; 
+        return "login";
     }
 
     @RequestMapping(value = "/user_dashboard")
@@ -151,13 +153,20 @@ public class UserController {
         }
     }
 
+
+
+
+
+    @RequestMapping(value = "/contact") 
+    public String Contact() 
+    { 
+    	return "contact"; 
+    }
+	
+
     
-	
-	
-	 @RequestMapping(value = "/contact") public String Contact() { return
-	  "contact"; }
-	 
-	  
+
+
 	  @GetMapping("/users") public String listUsers(Model model) {
 		  try {
 			  List<User> userList = userService.getUserList();
@@ -168,8 +177,8 @@ public class UserController {
 			  return "error";
 		  }
 	  }
-	 
-	  
+
+
 	  //count total user.
 	  @GetMapping("/admin_dashboard")
 	  public String adminDashboard(Model model) {
@@ -185,15 +194,15 @@ public class UserController {
 	      }
 	      return "dashboard_admin"; // /WEB-INF/view/dashboard_admin.jsp
 	  }
-	  
-	  
-	  
-	  
-	  
+
+
+
+
+
     private void addUserInSession(User user, HttpSession session) {
         session.setAttribute("user", user);
         session.setAttribute("userId", user.getUserId());
         session.setAttribute("role", user.getRole());
     }
-    
+
 }

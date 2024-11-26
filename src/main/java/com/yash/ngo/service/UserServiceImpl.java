@@ -1,19 +1,18 @@
 package com.yash.ngo.service;
 
-import com.yash.ngo.exception.UserBlockedException;
-import com.yash.ngo.dao.BaseDAO;
-import com.yash.ngo.dao.UserDAO;
-import com.yash.ngo.domain.User;
-import com.yash.ngo.rm.UserRowMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Service;
+
+import com.yash.ngo.dao.BaseDAO;
+import com.yash.ngo.dao.UserDAO;
+import com.yash.ngo.domain.User;
+import com.yash.ngo.exception.UserBlockedException;
+import com.yash.ngo.rm.UserRowMapper;
 
 @Service
 public class UserServiceImpl extends BaseDAO implements UserService {
@@ -58,7 +57,7 @@ public class UserServiceImpl extends BaseDAO implements UserService {
     public void changeLoginStatus(Integer userId, Integer loginStatus) {
 
     }
-    
+
     @Override
     public Integer getUserCount() {
         return userDAO.findAll().size();

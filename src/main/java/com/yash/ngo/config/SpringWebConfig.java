@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -19,15 +18,15 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
 	}
-	
-	 @Bean 
+
+	 @Bean
 	 public ViewResolver viewResolver()
 	 {//to acces private directory
 		 InternalResourceViewResolver vr=new InternalResourceViewResolver();
 		 vr.setViewClass(JstlView.class);//inside jsp we can use jstl code
-		 vr.setPrefix("/WEB-INF/view/"); 
-		 vr.setSuffix(".jsp"); 
-		 return vr; 
+		 vr.setPrefix("/WEB-INF/view/");
+		 vr.setSuffix(".jsp");
+		 return vr;
 	 }
 
 }

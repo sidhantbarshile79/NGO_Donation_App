@@ -3,7 +3,7 @@ package com.yash.ngo.command;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class CampaignCommand 
+public class CampaignCommand
 {
 	private String title;
     private String description;
@@ -47,6 +47,6 @@ public class CampaignCommand
 	public void setEnd_date(LocalDate end_date) {
 		this.end_date = end_date;
 	}
-	
-    
+
+
 }

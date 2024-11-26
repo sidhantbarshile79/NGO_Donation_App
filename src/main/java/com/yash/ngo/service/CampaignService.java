@@ -4,12 +4,12 @@ import java.util.List;
 
 import com.yash.ngo.domain.Campaign;
 
-public interface CampaignService 
+public interface CampaignService
 {
 	List<Campaign> getAllCampaigns();
 
-	Campaign getCampaignById(Integer id); 
-	
+	Campaign getCampaignById(Integer id);
+
 	int getCountCampaign();
-	
+
 }

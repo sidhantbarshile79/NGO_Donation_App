@@ -1,10 +1,11 @@
 package com.yash.ngo.rm;
 
-import com.yash.ngo.domain.Donation;
-import org.springframework.jdbc.core.RowMapper;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.yash.ngo.domain.Donation;
 
 public class DonationRowMapper implements RowMapper<Donation> {
     @Override

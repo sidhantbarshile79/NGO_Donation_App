@@ -1,7 +1,8 @@
 package com.yash.ngo.config;
 
-import javax.servlet.ServletException;
 import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class NGODispatcherServiceInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

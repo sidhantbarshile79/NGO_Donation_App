@@ -260,7 +260,7 @@ iframe {
 	                </form>
 				</div>
 				<div class="col-sm-6">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.978246402211!2d73.75154583681342!3d19.99973052344007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb81809c9833%3A0xb602f6d146aa4136!2sIndra%20Gandhi%20Complex%2C%20Mahatma%20Nagar%20Water%20Tank%20Rd%2C%20Behind%20Water%20Tank%2C%20Mahatma%20Nagar%2C%20Parijat%20Nagar%2C%20Nashik%2C%20Maharashtra%20422007!5e0!3m2!1sen!2sin!4v1731661857048!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.1753885258213!2d74.47061527349038!3d20.04309512090499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdc39a12e78fa39%3A0x5e7442089ffc8e4e!2sBarshile%20House!5e0!3m2!1sen!2sin!4v1732598148037!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 			</div>
 		</section>

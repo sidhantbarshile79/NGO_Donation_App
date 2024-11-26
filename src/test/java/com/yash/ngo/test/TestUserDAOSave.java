@@ -1,10 +1,11 @@
 package com.yash.ngo.test;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.yash.ngo.config.SpringRootConfig;
 import com.yash.ngo.dao.UserDAO;
 import com.yash.ngo.domain.User;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class TestUserDAOSave {
     public static void main(String[] args){

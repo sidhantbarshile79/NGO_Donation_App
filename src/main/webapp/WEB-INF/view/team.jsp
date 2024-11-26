@@ -211,7 +211,7 @@
                         <div class="member-info">
                             <h3 class="member-name">Siddhant Barshile</h3>
                             <p class="member-position">Executive Director</p>
-                            <p class="member-bio">With over 5+ years of experience in non-profit management, John leads our organization with passion and dedication.</p>
+                            <p class="member-bio">As the Executive Director of our NGO, he is dedicated to driving impactful initiatives that promote sustainable development and community empowerment.</p>
                             <div class="social-links">
                                 <a href="#"><i class="fab fa-linkedin"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -225,7 +225,7 @@
                         <div class="member-info">
                             <h3 class="member-name">Krishna Agarwal</h3>
                             <p class="member-position">Program Director</p>
-                            <p class="member-bio">Jane oversees our educational initiatives and ensures their effective implementation across communities.</p>
+                            <p class="member-bio">Krishna brings a wealth of experience and expertise to our NGO as the Program Director. Krishna is passionate about creating sustainable solutions that address the needs of our communities.</p>
                             <div class="social-links">
                                 <a href="#"><i class="fab fa-linkedin"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -239,7 +239,7 @@
                         <div class="member-info">
                             <h3 class="member-name">Dhanashri Salunkhe</h3>
                             <p class="member-position">Environmental Specialist</p>
-                            <p class="member-bio">Mike leads our environmental conservation projects and community awareness programs.</p>
+                            <p class="member-bio">Dhanashri is our dedicated Environmental Specialist, committed to promoting sustainability and environmental stewardship within our projects. she brings valuable knowledge and expertise to our team.</p>
                             <div class="social-links">
                                 <a href="#"><i class="fab fa-linkedin"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>

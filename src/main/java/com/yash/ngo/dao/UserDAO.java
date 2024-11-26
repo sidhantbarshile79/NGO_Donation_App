@@ -1,8 +1,8 @@
 package com.yash.ngo.dao;
 
-import com.yash.ngo.domain.User;
-
 import java.util.List;
+
+import com.yash.ngo.domain.User;
 
 public interface UserDAO {
     public void save(User u);

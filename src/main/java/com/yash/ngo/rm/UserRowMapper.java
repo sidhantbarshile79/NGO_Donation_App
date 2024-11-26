@@ -1,10 +1,11 @@
 package com.yash.ngo.rm;
 
-import com.yash.ngo.domain.User;
-import org.springframework.jdbc.core.RowMapper;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import com.yash.ngo.domain.User;
 
 public class UserRowMapper implements RowMapper<User> {
     @Override

@@ -1,7 +1,5 @@
 package com.yash.ngo.command;
 
-import java.util.Date;
-
 public class CertificateCommand {
     private String donorName;
     private double donationAmount;

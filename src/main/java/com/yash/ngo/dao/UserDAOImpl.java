@@ -1,19 +1,17 @@
 package com.yash.ngo.dao;
 
-import com.yash.ngo.dao.BaseDAO;
-import com.yash.ngo.dao.UserDAO;
-import com.yash.ngo.domain.User;
-import com.yash.ngo.rm.UserRowMapper;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.yash.ngo.domain.User;
+import com.yash.ngo.rm.UserRowMapper;
 
 @Repository
 public class UserDAOImpl extends BaseDAO implements UserDAO {

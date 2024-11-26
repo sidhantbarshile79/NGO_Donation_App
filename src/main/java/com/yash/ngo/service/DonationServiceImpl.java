@@ -9,37 +9,37 @@ import com.yash.ngo.dao.DonationDAO;
 import com.yash.ngo.domain.Donation;
 
 @Service
-public class DonationServiceImpl implements DonationService 
+public class DonationServiceImpl implements DonationService
 {
 	@Autowired
 	private DonationDAO donationDAO;
-	
-	
+
+
 	@Autowired
-	public DonationServiceImpl(DonationDAO donationDAO) 
-	{    
+	public DonationServiceImpl(DonationDAO donationDAO)
+	{
 		this.donationDAO = donationDAO;
 	}
-	
+
 
 	@Override
     public void saveDonation(Donation donation) {
         donationDAO.save(donation);
     }
 
-    
 
-	
+
+
 	  @Override public List<Donation> findAll()
 	  {
 		  List<Donation> donations=donationDAO.findAll();
-		  return donations; 
-	  
+		  return donations;
+
 	  }
-	  
+
 	  @Override public List<Donation> findByProperty(String propName, Object
 	  propValue) { return donationDAO.findByProperty(propName, propValue); }
-	 
+
 
     @Override
     public void updateDonation(Donation donation) {

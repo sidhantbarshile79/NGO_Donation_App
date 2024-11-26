@@ -1,15 +1,17 @@
 package com.yash.ngo.dao;
 
-import com.yash.ngo.domain.Donation;
-import com.yash.ngo.rm.DonationRowMapper;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import com.yash.ngo.domain.Donation;
+import com.yash.ngo.rm.DonationRowMapper;
 
 @Repository
 public class DonationDAOImpl extends BaseDAO implements DonationDAO {
@@ -18,7 +20,7 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
     public void save(Donation d) {
         String sql = "INSERT INTO donation(userId, donationAmount, donationDate, aadhaarNumber, panCardNumber, donationType) "
                    + "VALUES(:userId, :donationAmount, :donationDate, :aadhaarNumber, :panCardNumber, :donationType)";
-        
+
         Map<String, Object> m = new HashMap<>();
         m.put("userId", d.getUserId());
         m.put("donationAmount", d.getDonationAmount());
@@ -26,10 +28,10 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
         m.put("aadhaarNumber", d.getAadhaarNumber());
         m.put("panCardNumber", d.getPanCardNumber());
         m.put("donationType", d.getDonationType());
-        
+
         KeyHolder kh = new GeneratedKeyHolder();
         SqlParameterSource ps = new MapSqlParameterSource(m);
-        
+
         super.getNamedParameterJdbcTemplate().update(sql, ps, kh);
         Integer donationId = kh.getKey().intValue();
         d.setDonationId(donationId);
@@ -40,7 +42,7 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
         String sql = "UPDATE donation SET userId=:userId, donationAmount=:donationAmount, donationDate=:donationDate, "
                    + "aadhaarNumber=:aadhaarNumber, panCardNumber=:panCardNumber, donationType=:donationType "
                    + "WHERE donationId=:donationId";
-        
+
         Map<String, Object> m = new HashMap<>();
         m.put("userId", d.getUserId());
         m.put("donationAmount", d.getDonationAmount());
@@ -49,7 +51,7 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
         m.put("panCardNumber", d.getPanCardNumber());
         m.put("donationType", d.getDonationType());
         m.put("donationId", d.getDonationId());
-        
+
         getNamedParameterJdbcTemplate().update(sql, m);
     }
 

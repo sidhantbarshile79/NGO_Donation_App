@@ -1,6 +1,5 @@
 package com.yash.ngo.command;
 import java.sql.Date;
-import java.time.LocalDate;
 
 public class DonationCommand {
 	private Integer userId;
@@ -9,8 +8,8 @@ public class DonationCommand {
     private String aadhaarNumber;
     private String panCardNumber;
     private String donationType;
-    
-    
+
+
 	public DonationCommand() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -83,7 +82,7 @@ public class DonationCommand {
 				+ donationDate + ", aadhaarNumber=" + aadhaarNumber + ", panCardNumber=" + panCardNumber
 				+ ", donationType=" + donationType + "]";
 	}
-    
-    
-	
+
+
+
 }

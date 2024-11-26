@@ -1,11 +1,12 @@
 package com.yash.ngo.test;
 
-import com.yash.ngo.config.SpringRootConfig;
+import javax.sql.DataSource;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
+import com.yash.ngo.config.SpringRootConfig;
 
 public class TestDataSource {
     public static void main(String[] args) {

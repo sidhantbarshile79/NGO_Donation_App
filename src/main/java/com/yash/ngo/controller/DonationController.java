@@ -1,28 +1,32 @@
 package com.yash.ngo.controller;
 
-import com.yash.ngo.command.DonationCommand;
-import com.yash.ngo.domain.Campaign;
-import com.yash.ngo.domain.Donation;
-import com.yash.ngo.service.DonationService;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.yash.ngo.command.DonationCommand;
+import com.yash.ngo.domain.Donation;
+import com.yash.ngo.service.DonationService;
 
 @Controller
 public class DonationController {
-    
+
     @Autowired
     private DonationService donationService;
-    
-    
-    
-    
+
+
+
+
     @GetMapping(value = "/donation/{userId}")
     public String donationHistory(@PathVariable("userId") int userId, Model model) {
     	System.out.println("Donation start");
@@ -45,7 +49,7 @@ public class DonationController {
             return "dashboard_user";
         }
     }
-    
+
     //donationform
     @GetMapping("/user_dashboard/donation_form")
     public String showDonationForm(@RequestParam(value = "userId", required = false) Integer userId, Model model) {
@@ -56,8 +60,8 @@ public class DonationController {
         }
         return "donation_form";
     }
-    
-    
+
+
     //donation.jsp
     @GetMapping("/donors")
     public String listDonations(Model model) {
@@ -70,8 +74,8 @@ public class DonationController {
     		return "donors";
     	}
     }
-    
-    
+
+
     @GetMapping("/donation")
     public String listDonation(Model model) {
     	try {
@@ -83,11 +87,11 @@ public class DonationController {
     		return "user_dashboard";
     	}
     }
-    
-    
+
+
     @PostMapping("/donate")  // This should handle the donation form submission
-    public String donate(@ModelAttribute("donationCommand") DonationCommand cmd, 
-                         BindingResult result, RedirectAttributes redirectAttributes) 
+    public String donate(@ModelAttribute("donationCommand") DonationCommand cmd,
+                         BindingResult result, RedirectAttributes redirectAttributes)
     {
         if (result.hasErrors()) {
             return "donation_form"; // Return to the donation form if there are errors
@@ -113,16 +117,16 @@ public class DonationController {
         }
     }
 
-    //user dashboard - for showing donation list 
-    @RequestMapping(value = "/user_dashboard/{id}") 
-    public String donerForm(Model model, @PathVariable Integer id) 
-    { 
+    //user dashboard - for showing donation list
+    @RequestMapping(value = "/user_dashboard/{id}")
+    public String donerForm(Model model, @PathVariable Integer id)
+    {
     	Donation dn=donationService.findById(id);
    		model.addAttribute("donation", dn);
         List<Donation> donations = donationService.getAllDonationHistoryList(id);
         model.addAttribute("donations", donations);
-   		 return "dashboard_user"; 
+   		 return "dashboard_user";
    	}
-    
-        
+
+
 }
