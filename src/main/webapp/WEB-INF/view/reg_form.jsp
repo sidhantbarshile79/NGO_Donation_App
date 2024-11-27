@@ -188,7 +188,7 @@ footer {
         </header>
         
         
-	<div class="container mt-5">
+	<div class="container">
         <main class="mt-4">
             <h3>User Registration</h3>
 

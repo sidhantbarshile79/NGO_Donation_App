@@ -111,7 +111,8 @@ public class DonationController {
             // Add a success message
             redirectAttributes.addFlashAttribute("successMessage", "Donation successful!");
             return "redirect:/user_dashboard/"+cmd.getUserId(); // Redirect to the user dashboard
-        } catch (Exception e) {
+        } catch (Exception e) 
+        {
             redirectAttributes.addFlashAttribute("errorMessage", "Error saving donation: " + e.getMessage());
             return "redirect:/user_dashboard"; // Redirect to the dashboard with an error
         }

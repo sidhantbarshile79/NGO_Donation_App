@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = {"com.yash.ngo.dao","com.yash.ngo.service", "com.yash.ngo.controller"})
-public class SpringRootConfig {
+public class SpringRootConfig 
+{
 
 	@Bean
     public BasicDataSource getDataSource()
@@ -24,5 +25,4 @@ public class SpringRootConfig {
         ds.setDefaultAutoCommit(true);
         return ds;
 	}
-
 }

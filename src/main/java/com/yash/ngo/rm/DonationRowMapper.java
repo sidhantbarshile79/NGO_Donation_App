@@ -18,6 +18,8 @@ public class DonationRowMapper implements RowMapper<Donation> {
         donation.setAadhaarNumber(rs.getString("aadhaarNumber"));
         donation.setPanCardNumber(rs.getString("panCardNumber"));
         donation.setDonationType(rs.getString("donationType"));
+        
+        donation.setName(rs.getString("name"));
         return donation;
     }
 }

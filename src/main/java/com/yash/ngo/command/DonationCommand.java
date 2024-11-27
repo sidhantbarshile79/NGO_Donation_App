@@ -2,6 +2,17 @@ package com.yash.ngo.command;
 import java.sql.Date;
 
 public class DonationCommand {
+	private String name;
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
 	private Integer userId;
     private Double donationAmount;
     private Date donationDate;
@@ -78,11 +89,12 @@ public class DonationCommand {
 
 	@Override
 	public String toString() {
-		return "DonationCommand [userId=" + userId + ", donationAmount=" + donationAmount + ", donationDate="
-				+ donationDate + ", aadhaarNumber=" + aadhaarNumber + ", panCardNumber=" + panCardNumber
-				+ ", donationType=" + donationType + "]";
+		return "DonationCommand [name=" + name + ", userId=" + userId + ", donationAmount=" + donationAmount
+				+ ", donationDate=" + donationDate + ", aadhaarNumber=" + aadhaarNumber + ", panCardNumber="
+				+ panCardNumber + ", donationType=" + donationType + "]";
 	}
 
 
+	
 
 }

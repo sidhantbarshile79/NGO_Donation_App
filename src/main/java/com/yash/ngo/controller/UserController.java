@@ -46,7 +46,6 @@ public class UserController
 
 
 
-
 	@RequestMapping(value = "/about")
 	public String About()
 	{
@@ -61,6 +60,7 @@ public class UserController
 		return "link";
 	}
 
+	
 	@RequestMapping(value = "/team")
 	public String Team()
 	{
@@ -71,12 +71,13 @@ public class UserController
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String handleLogin(@ModelAttribute("command") LoginCommand cmd, Model model, HttpSession session) {
-        try {
+        try 
+        {
             User loggedInUser  = userService.login(cmd.getLoginName(), cmd.getPassword());
 
             if (loggedInUser  == null) {
                 model.addAttribute("err", "Login failed. Please enter valid credentials.");
-                return "index";
+                return "login";
             } else {
                 // Success
                 session.setAttribute("userId", loggedInUser .getUserId());
@@ -90,7 +91,7 @@ public class UserController
                     return "redirect:user_dashboard/"+id; // Redirect to donation form
                 } else {
                     model.addAttribute("err", "Invalid user role.");
-                    return "index";
+                    return "login";
                 }
             }
         } catch (UserBlockedException ex) {
@@ -139,13 +140,15 @@ public class UserController
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String registerUser (@ModelAttribute("command") UserCommand cmd, Model model) {
-        try {
+    public String registerUser (@ModelAttribute("command") UserCommand cmd, Model model) 
+    {
+        try 
+        {
             User user = cmd.getUser ();
             user.setRole(UserService.ROLE_USER);
             user.setLoginStatus(UserService.LOGIN_STATUS_ACTIVE);
             userService.register(user);
-            return "redirect:index?act=reg"; // Redirect to Login Page
+            return "redirect:login?act=reg"; // Redirect to Login Page
         } catch (DuplicateKeyException e) {
             e.printStackTrace();
             model.addAttribute("err", "Username is already registered. Please select another username.");

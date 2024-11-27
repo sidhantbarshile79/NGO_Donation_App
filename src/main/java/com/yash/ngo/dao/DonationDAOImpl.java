@@ -75,11 +75,13 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
 
     @Override
     public List<Donation> findAll() {
-        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType "
-                   + "FROM donation d";
+        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType, u.name " +
+                     "FROM donation d " +
+                     "INNER JOIN user u ON d.userId = u.userId";
+
         return getJdbcTemplate().query(sql, new DonationRowMapper());
     }
-
+    
     @Override
     public List<Donation> findByProperty(String propName, Object propValue) {
         String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType "
