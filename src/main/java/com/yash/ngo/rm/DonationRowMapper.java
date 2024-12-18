@@ -7,10 +7,12 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.yash.ngo.domain.Donation;
 
-public class DonationRowMapper implements RowMapper<Donation> {
+public class DonationRowMapper implements RowMapper<Donation> 
+{
     @Override
     public Donation mapRow(ResultSet rs, int rowNum) throws SQLException {
         Donation donation = new Donation();
+        
         donation.setDonationId(rs.getInt("donationId"));
         donation.setUserId(rs.getInt("userId"));
         donation.setDonationAmount(rs.getDouble("donationAmount"));
@@ -18,8 +20,9 @@ public class DonationRowMapper implements RowMapper<Donation> {
         donation.setAadhaarNumber(rs.getString("aadhaarNumber"));
         donation.setPanCardNumber(rs.getString("panCardNumber"));
         donation.setDonationType(rs.getString("donationType"));
-        
+        donation.setDonationReason(rs.getString("donationReason"));
         donation.setName(rs.getString("name"));
+        
         return donation;
     }
 }

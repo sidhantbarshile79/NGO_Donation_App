@@ -9,7 +9,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Donation Form - NGO Donation</title>
-    <link href="<c:url value='/static/css/style.css'/>" rel="stylesheet" type="text/css"/>
+    <link href="/static/css/styles.css" rel="stylesheet" type="text/css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -21,38 +21,38 @@
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
-}
-
-section {
-    padding: 60px 0;
-}
-
-h2, h3 {
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 15px;
-    text-alignment: center;
-}
-
-h2:after, h3:after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #3498db;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.text {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 20px;
-}    
+		}
+		
+		section {
+		    padding: 60px 0;
+		}
+		
+		h2, h3 {
+		    font-weight: 700;
+		    color: #2c3e50;
+		    margin-bottom: 30px;
+		    position: relative;
+		    padding-bottom: 15px;
+		    text-alignment: center;
+		}
+		
+		h2:after, h3:after {
+		    content: '';
+		    display: block;
+		    width: 60px;
+		    height: 3px;
+		    background: #3498db;
+		    position: absolute;
+		    bottom: 0;
+		    left: 50%;
+		    transform: translateX(-50%);
+		}
+		
+		.text {
+		    font-size: 1.1rem;
+		    color: #555;
+		    margin-bottom: 20px;
+		}    
         .main-container {
             max-width: 100%;
             /* margin: 40px auto; */
@@ -150,7 +150,6 @@ h2:after, h3:after {
             }
         }
     </style>
-</head>
 <body>
     <header>
         <jsp:include page="include/header.jsp"/>
@@ -173,11 +172,11 @@ h2:after, h3:after {
             <!-- Right Column - Form Section -->
             <div class="col-md-7">
                 <div class="form-section">
-                    <f:form action="${pageContext.request.contextPath}/donate" 
+                    <f:form action="${pageContext.request.contextPath}/create-order" 
                             modelAttribute="donationCommand" 
                             method="post">
-                        <f:input type="hidden" name="userId" value="${user.userId}" path="userId" class="form-control"/>
-                        
+                        <f:hidden path="userId" value="${user.userId}" />
+
                         <div class="input-group mb-3">
 					        <span class="input-group-text"><i class="fas fa-hand-holding-heart"></i></span>
 					        <f:select path="donationType" class="form-control">
@@ -188,9 +187,22 @@ h2:after, h3:after {
 					            <f:option value="OTHER" label="Other"/>
 					        </f:select>
 					    </div>
-                        
+					
+					    <div class="input-group mb-3">
+					        <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+					        <f:select path="donationReason" class="form-control">
+					            <f:option value="" label="Select Donation Reason"/>
+					            <f:option value="BIRTHDAY" label="Birthday"/>
+					            <f:option value="ANNIVERSARY" label="Anniversary"/>
+					            <f:option value="NEW_BORN" label="New Born"/>
+					            <f:option value="REMEMBRANCE" label="Remembrance/Death Anniversary"/>
+					            <f:option value="NO_REASON" label="No Specific Reason"/>
+					            <f:option value="OTHER" label="Other"/>
+					        </f:select>
+					    </div>
+						
                         <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                            <span class="input-group-text"><i class="fas fa-rupee-sign"></i></span>
                             <f:input path="donationAmount" placeholder="Enter Amount" class="form-control"/>
                         </div>
                         
@@ -219,10 +231,9 @@ h2:after, h3:after {
     <footer class="mt-5">
         <jsp:include page="include/footer.jsp"/>
     </footer>
-
-
-
 </body>
+
+
 <script> 
 
 // Get the current date 
@@ -252,7 +263,7 @@ $(document).ready(function() {
     }, "Please enter a valid PAN number (e.g., ABCDE1234F)");
 
     // Form validation rules
-    $("form[action*='/donate']").validate({
+    $("form").validate({  // Changed from specific action selector to general form selector
         rules: {
             donationAmount: {
                 required: true,
@@ -307,8 +318,8 @@ $(document).ready(function() {
         submitHandler: function(form) {
             // Additional checks before submission
             var amount = parseFloat($("#donationAmount").val());
-            if (amount <= 0) {
-                alert("Donation amount must be greater than 0");
+            if (amount <= 1 || amount >= 10000000) {
+                alert("Donation amount must be between 1 and 9,999,999");
                 return false;
             }
             
@@ -325,6 +336,13 @@ $(document).ready(function() {
         // Ensure only one decimal point
         if (($(this).val().match(/\./g) || []).length > 1) {
             $(this).val($(this).val().replace(/\.+$/, ''));
+        }
+
+        // Limit to 7 digits before decimal point
+        var parts = $(this).val().split('.');
+        if (parts[0].length > 7) {
+            parts[0] = parts[0].slice(0, 7);
+            $(this).val(parts.join('.'));
         }
     });
 
@@ -350,8 +368,4 @@ $(document).ready(function() {
 });
 </script>
 
-	
-
-
 </html>
-

@@ -21,6 +21,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Donation Type</th>
+                    <th>Donation Reasons</th>
                     <th>Amount</th>
                     <th>Date</th>
                 </tr>
@@ -30,6 +31,7 @@
                     <tr>
                         <td>${donation.donationId}</td>
                         <td>${donation.donationType}</td>
+                        <td>${donation.donationReason}</td>
                         <td>${donation.donationAmount}</td>
                         <td>${donation.donationDate}</td>
                         

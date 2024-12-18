@@ -47,13 +47,9 @@
                     <s:url var="team_url" value="/team"/>
                     <s:url var="contact_url" value="/contact"/>
                     <s:url var="login_url" value="/login"/>
-                    <s:url var="donation_url" value="/donation_form"/>
-                    <s:url var="users_url" value="/users"/>
-                    <s:url var="donor_url" value="/donors"/>
-                    <s:url var="donation_url" value="/donation"/>
                     <s:url var="link_url" value="/link"/>
                     <s:url var="user_login" value="/user_dashboard"/>
-                    
+                    <s:url var="logout_url" value="/logout"/>
                     
                     <li class="nav-item">
                         <a class="nav-link" href="${home_url}">Home</a>
@@ -78,10 +74,15 @@
                     </li>
                 </c:if>
                 <c:if test="${sessionScope.userId != null && sessionScope.role == 1}">
+                
                     <s:url var="admin_users_url" value="/admin/users"/>
-                    <s:url var="logout_url" value="/logout"/>
+                    <s:url var="users_url" value="/users"/>
+                    <s:url var="donor_url" value="/donors"/>
+                    <s:url var="donation_url" value="/donation"/>
+                   
+                    
                     <li class="nav-item">
-                        <a class="nav-link" href="admin_dashboard">Home</a>
+                        <a class="nav-link" href="admin_dashboard${id}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="users">User List</a>
@@ -93,16 +94,23 @@
                         <a class="nav-link" href="donation">Donation List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="${logout_url}">Logout</a>
+                        <a class="nav-link" href="logout">Logout</a>
                     </li>
                 </c:if>
-                <c:if test="${sessionScope.userId != null && sessionScope.role == 2}">
-                    <li class="nav-item">
-                        <a class="nav-link" href="user_dashboard">Home</a>
-                    </li>
+               <c:if test="${sessionScope.userId != null && sessionScope.role == 2}">
+               		<s:url var="donation_url" value="/donation_form"/>
+                    <s:url var="userDonation" value="/userDonation"/>
+               		
+               		
+   					 <li class="nav-item">
+     					<a class="nav-link" href="${userId}">Home</a>
+    				</li>
                     <li class="nav-item">
                         <a class="nav-link" href="donation_form">Donate</a>
                     </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="userDonation">Donation History</a>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="logout">Logout</a>
                     </li>

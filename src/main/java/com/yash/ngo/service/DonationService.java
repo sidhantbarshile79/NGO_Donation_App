@@ -9,7 +9,7 @@ public interface DonationService
 
 	public void saveDonation(Donation donation);
 
-	public Donation findById(Integer userId);
+	public Donation findById(Integer donationId);
 
 
 	  public List<Donation> findAll();
@@ -23,4 +23,6 @@ public interface DonationService
 	public List<Donation> getAllDonationHistoryList(int userId);
 
 	public int getTotalDonationAmount();
+	
+
 }

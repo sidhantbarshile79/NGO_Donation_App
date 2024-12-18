@@ -8,7 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Donation Certificate - NGO Donation</title>
-    <link href="<c:url value='/static/css/style.css'/>" rel="stylesheet" type="text/css"/>
+    <link href="<c:url value='/static/css/styles.css'/>" rel="stylesheet" type="text/css"/>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {

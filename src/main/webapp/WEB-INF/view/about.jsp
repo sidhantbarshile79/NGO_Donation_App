@@ -1,4 +1,8 @@
-
+<link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <!-- HTML Structure -->
 <header>
@@ -40,7 +44,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="video-container">
-      <img class="d-block w-100" src="${pageContext.request.contextPath}/static/images/slider1.jpg" alt="First slide" >
+      				<img class="d-block w-100" src="${pageContext.request.contextPath}/static/images/about.jpg" alt="First slide" >
                 </div>
             </div>
         </div>
@@ -80,40 +84,65 @@
 </section>
 
 
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/0_UCZrq5eAo?si=sf01cgpbzuZNgsm0" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-md-6 vision-mission-container">
+                <div class="vm-box">
+                    <h3 class="vm-title" onclick="toggleContent('vision')">
+                        Our Vision
+                        <span class="toggle-icon" id="vision-icon">+</span>
+                    </h3>
+                    <div class="vm-content" id="vision-content">
+                        <p>Our vision is to create a world where no one goes hungry, where every child has access to education,
+                        and where communities are empowered to build sustainable futures. We envision a society where the act
+                        of giving becomes a natural part of everyone's life, creating a chain of positive impact that transforms
+                        lives and communities.</p>
+                    </div>
+                </div>
 
-
-<!-- Vision & Mission Section -->
-<div class="vision-mission-container">
-    <div class="vm-box">
-        <h3 class="vm-title" onclick="toggleContent('vision')">
-            Our Vision
-            <span class="toggle-icon" id="vision-icon">+</span>
-        </h3>
-        <div class="vm-content" id="vision-content">
-            <p>Our vision is to create a world where no one goes hungry, where every child has access to education, 
-            and where communities are empowered to build sustainable futures. We envision a society where the act 
-            of giving becomes a natural part of everyone's life, creating a chain of positive impact that transforms 
-            lives and communities.</p>
+                <div class="vm-box">
+                    <h3 class="vm-title" onclick="toggleContent('mission')">
+                        Our Mission
+                        <span class="toggle-icon" id="mission-icon">+</span>
+                    </h3>
+                    <div class="vm-content" id="mission-content">
+                        <p>Our mission is to facilitate meaningful connections between donors and communities in need, ensuring
+                        that every donation creates maximum impact. We work tirelessly to: identify and support crucial community
+                        projects, maintain complete transparency in fund utilization, and empower local communities to become
+                        self-sufficient through sustainable development initiatives.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="vm-box">
-        <h3 class="vm-title" onclick="toggleContent('mission')">
-            Our Mission
-            <span class="toggle-icon" id="mission-icon">+</span>
-        </h3>
-        <div class="vm-content" id="mission-content">
-            <p>Our mission is to facilitate meaningful connections between donors and communities in need, ensuring 
-            that every donation creates maximum impact. We work tirelessly to: identify and support crucial community 
-            projects, maintain complete transparency in fund utilization, and empower local communities to become 
-            self-sufficient through sustainable development initiatives.</p>
-        </div>
-    </div>
-</div>
-
+    
+    	<section class="about-section fade-in">
+            <div class="container">
+                <h2 class="text-center">Our Partners</h2>
+                   <p class="text">Through collaborative efforts, these organizations have not only enhanced our operational capabilities but have also fostered a culture of innovation and shared learning within our team. Organisations whose support and partnership has strengthened our work, implementation and knowledge across many verticals.As we continue to collaborate, we are excited about the potential for future initiatives that will further enhance our collective impact in the industry.</p>
+                   <div class="row">
+                    <logoSlider>
+					    <jsp:include page="include/logoSlider.jsp"/>
+					</logoSlider>
+                </div>
+            </div>
+        </section>
+	    
 
 <!-- Hero Section -->
-<div class="hero-section">
+<div class="hero-section mt-5">
     <div class="hero-content">
         <h1>Making a Difference Together</h1>
         <p>Join us in our mission to create lasting positive change in communities worldwide</p>
@@ -160,193 +189,224 @@
 
 <!-- Enhanced Styling -->
 <style>
-/* Existing Styles */
-.vision-mission-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 15px;
-}
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
 
-.vm-box {
-    margin-bottom: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    background: #fff;
-}
+        section {
+            padding: 60px 0;
+        }
 
-.vm-title {
-    background: linear-gradient(135deg, #3498db, #2c3e50);
-    color: white;
-    padding: 15px 20px;
-    margin: 0;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s ease;
-}
+        h2 {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            text-align: center;
+        }
 
-.vm-title:hover {
-    background: linear-gradient(135deg, #2980b9, #2c3e50);
-}
-
-.toggle-icon {
-    font-size: 24px;
-    transition: transform 0.3s ease;
-}
-
-.vm-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-    padding: 0 20px;
-    background: #fff;
-}
-
-.vm-content p {
-    margin: 20px 0;
-    line-height: 1.6;
-    color: #444;
-}
-
-.vm-content.active {
-    max-height: 500px;
-}
-
-.toggle-icon.active {
-    transform: rotate(45deg);
-}
-
-/* New Styles */
-.hero-section {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    /* margin-bottom: 50px; */
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.impact-numbers {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-    text-align: center;
-}
-
-.impact-item {
-    padding: 20px;
-}
-
-.impact-count {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    color: #3498db;
-}
-
-.impact-label {
-    font-size: 1rem;
-    color: #666;
-}
-
-.focus-areas {
-    background: #f9f9f9;
-    padding: 60px 0;
-}
-
-.focus-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.focus-item {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.focus-item:hover {
-    transform: translateY(-5px);
-}
-
-.focus-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.get-involved {
-    padding: 60px 0;
-}
-
-.involvement-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.involvement-card {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary {
-    background: #3498db;
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #2980b9;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .impact-numbers {
-        flex-direction: column;
-    }
-    
-    .impact-item {
-        margin-bottom: 20px;
-    }
-}
+        h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #3498db;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+	        }
+	/* Existing Styles */
+	.vision-mission-container {
+	    max-width: 800px;
+	    margin: 20px auto;
+	    padding: 0 15px;
+	}
+	
+	.vm-box {
+	    margin-bottom: 20px;
+	    border-radius: 8px;
+	    overflow: hidden;
+	    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	    background: #fff;
+	}
+	
+	.vm-title {
+	    background: linear-gradient(135deg, #3498db, #2c3e50);
+	    color: white;
+	    padding: 15px 20px;
+	    margin: 0;
+	    cursor: pointer;
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    transition: background-color 0.3s ease;
+	}
+	
+	.vm-title:hover {
+	    background: linear-gradient(135deg, #2980b9, #2c3e50);
+	}
+	
+	.toggle-icon {
+	    font-size: 24px;
+	    transition: transform 0.3s ease;
+	}
+	
+	.vm-content {
+	    max-height: 0;
+	    overflow: hidden;
+	    transition: max-height 0.5s ease;
+	    padding: 0 20px;
+	    background: #fff;
+	}
+	
+	.vm-content p {
+	    margin: 20px 0;
+	    line-height: 1.6;
+	    color: #444;
+	}
+	
+	.vm-content.active {
+	    max-height: 500px;
+	}
+	
+	.toggle-icon.active {
+	    transform: rotate(45deg);
+	}
+	
+	/* New Styles */
+	.hero-section {
+	    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/images/hero-bg.jpg');
+	    background-size: cover;
+	    background-position: center;
+	    height: 300px;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    text-align: center;
+	    color: white;
+	    /* margin-bottom: 50px; */
+	}
+	
+	.hero-content h1 {
+	    font-size: 3rem;
+	    margin-bottom: 20px;
+	}
+	
+	.hero-content p {
+	    font-size: 1.2rem;
+	    max-width: 100%;
+	    margin: 0 auto;
+	}
+	
+	.impact-numbers {
+	    display: flex;
+	    justify-content: space-around;
+	    margin-top: 30px;
+	    text-align: center;
+	}
+	
+	.impact-item {
+	    padding: 20px;
+	}
+	
+	.impact-count {
+	    display: block;
+	    font-size: 2rem;
+	    font-weight: bold;
+	    color: #3498db;
+	}
+	
+	.impact-label {
+	    font-size: 1rem;
+	    color: #666;
+	}
+	
+	.focus-areas {
+	    background: #f9f9f9;
+	    padding: 60px 0;
+	}
+	
+	.focus-grid {
+	    display: grid;
+	    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	    gap: 30px;
+	    margin-top: 40px;
+	}
+	
+	.focus-item {
+	    background: white;
+	    padding: 30px;
+	    border-radius: 8px;
+	    text-align: center;
+	    transition: transform 0.3s ease;
+	    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	}
+	
+	.focus-item:hover {
+	    transform: translateY(-5px);
+	}
+	
+	.focus-icon {
+	    font-size: 2.5rem;
+	    margin-bottom: 15px;
+	}
+	
+	.get-involved {
+	    padding: 60px 0;
+	}
+	
+	.involvement-options {
+	    display: grid;
+	    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	    gap: 30px;
+	    margin-top: 40px;
+	}
+	
+	.involvement-card {
+	    background: white;
+	    padding: 30px;
+	    border-radius: 8px;
+	    text-align: center;
+	    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	}
+	
+	.btn {
+	    display: inline-block;
+	    padding: 10px 20px;
+	    margin-top: 15px;
+	    border-radius: 5px;
+	    text-decoration: none;
+	    transition: background-color 0.3s ease;
+	}
+	
+	.btn-primary {
+	    background: #3498db;
+	    color: white;
+	}
+	
+	.btn-primary:hover {
+	    background: #2980b9;
+	}
+	
+	/* Responsive Design */
+	@media (max-width: 768px) {
+	    .hero-content h1 {
+	        font-size: 2rem;
+	    }
+	    
+	    .impact-numbers {
+	        flex-direction: column;
+	    }
+	    
+	    .impact-item {
+	        margin-bottom: 20px;
+	    }
+	}
 </style>
 
 <script>

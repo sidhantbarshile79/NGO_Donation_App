@@ -32,7 +32,6 @@
                         <td>${donation.name}</td>
                         <td>${donation.donationAmount}</td>
                         <td>${donation.donationDate}</td>
-                        
                     </tr>
                 </c:forEach>
             </tbody>

@@ -103,35 +103,6 @@
                 </div>
             </div>
         </div>
-        
-       <%--  <div class="row">
-            <!-- Recent Activity -->
-            <div class="col-md-8">
-                <div class="recent-activity">
-                    <h4 class="mb-4">Recent Activity</h4>
-                    <c:forEach items="${recentActivities}" var="activity">
-                        <div class="activity-item">
-                            <div class="d-flex justify-content-between">
-                                <span>${activity.description}</span>
-                                <small class="text-muted">${activity.timestamp}</small>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
-            </div>
-            
-            <!-- Quick Actions -->
-            <div class="col-md-4">
-                <div class="quick-actions">
-                    <h4 class="mb-4">Quick Actions</h4>
-                    <a href="manage-users"><i class="fas fa-user-cog mr-2"></i> Manage Users</a>
-                    <a href="manage-donations"><i class="fas fa-donate mr-2"></i> View Donations</a>
-                    <a href="manage-campaigns"><i class="fas fa-bullhorn mr-2"></i> Manage Campaigns</a>
-                    <a href="reports"><i class="fas fa-chart-bar mr-2"></i> Generate Reports</a>
-                    <a href="settings"><i class="fas fa-cog mr-2"></i> System Settings</a>
-                </div>
-            </div>
-        </div>--%>
     </div> 
     
     <footer class="mt-5">

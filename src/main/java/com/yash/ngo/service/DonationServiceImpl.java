@@ -1,7 +1,6 @@
 package com.yash.ngo.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +12,7 @@ public class DonationServiceImpl implements DonationService
 {
 	@Autowired
 	private DonationDAO donationDAO;
+	//private DonationDAO donationRepository;
 
 
 	@Autowired
@@ -61,9 +61,9 @@ public class DonationServiceImpl implements DonationService
 
 
 	@Override
-	public Donation findById(Integer userId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Donation findById(Integer donationId) 
+	{
+		return donationDAO.findById(donationId);
 	}
 
 
@@ -73,5 +73,6 @@ public class DonationServiceImpl implements DonationService
 		// TODO Auto-generated method stub
 		return donationDAO.donationCount();
 	}
-
+	
+	
 }

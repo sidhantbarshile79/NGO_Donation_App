@@ -13,8 +13,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
         /* Global Styles */
         body {
@@ -206,18 +206,14 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="video-container">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/tkqtJpwF9Y8?si=FVSOirlRk2ZS-mJ1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        	<iframe width="100%" height="315" src="https://www.youtube.com/embed/qXwzaPtCJsI?si=yb4CgQeVP2k_Es2f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Testimonials -->
-        <section class="testimonial-section">
-            <jsp:include page="include/testimonial.jsp"/>
-        </section>
-
+        
+        
         <!-- Impact Section -->
         <section class="impact-section">
             <div class="container">
@@ -241,6 +237,25 @@
                 </p>
             </div>
         </section>
+        
+		<section class="about-section fade-in">
+            <div class="container">
+                <h2 class="text-center">Our Partners</h2>
+                   <p class="text">Through collaborative efforts, these organizations have not only enhanced our operational capabilities but have also fostered a culture of innovation and shared learning within our team. Organisations whose support and partnership has strengthened our work, implementation and knowledge across many verticals.As we continue to collaborate, we are excited about the potential for future initiatives that will further enhance our collective impact in the industry.</p>
+                    <logoSlider>
+					    <jsp:include page="include/logoSlider.jsp"/>
+					</logoSlider>
+            </div>
+        </section>
+		
+
+		
+        <!-- Testimonials -->
+        <section class="testimonial-section">
+            <jsp:include page="include/testimonial.jsp"/>
+        </section>
+
+		
 
         <!-- Mission Section -->
         <section class="mission-section">
@@ -273,12 +288,23 @@
                 </div>
             </div>
         </section>
-    </main>
+    
+    
+    	<section class="about-section fade-in">
+            <div class="container">
+                <h2 class="text-center">Proud to Have Worked With</h2>
+                   <p class="text">Deepest gratitude to our current and former founders for supporting this people's movement for a prosperous India...!</p>
+                    <logoSliderProud>
+					    <jsp:include page="include/logoSliderProud.jsp"/>
+					</logoSliderProud>
+            </div>
+        </section>
+		
 
     <footer class="mt-5">
         <jsp:include page="include/footer.jsp"/>
     </footer>
-
+</main>
     <script>
         // Animation trigger for elements when they come into view
         $(document).ready(function() {

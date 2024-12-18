@@ -21,7 +21,8 @@ public class UserServiceImpl extends BaseDAO implements UserService {
     private UserDAO userDAO;
 
     @Override
-    public void register(User u) {
+    public void register(User u) 
+    {
         userDAO.save(u);
     }
 
@@ -78,6 +79,12 @@ public class UserServiceImpl extends BaseDAO implements UserService {
 	public double getTotalDonationAmount() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public User getUserById(int userId) {
+		// TODO Auto-generated method stub
+		return userDAO.findById(userId);
 	}
 
 }

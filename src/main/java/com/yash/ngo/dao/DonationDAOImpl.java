@@ -18,8 +18,8 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
 
     @Override
     public void save(Donation d) {
-        String sql = "INSERT INTO donation(userId, donationAmount, donationDate, aadhaarNumber, panCardNumber, donationType) "
-                   + "VALUES(:userId, :donationAmount, :donationDate, :aadhaarNumber, :panCardNumber, :donationType)";
+        String sql = "INSERT INTO donation(userId, donationAmount, donationDate, aadhaarNumber, panCardNumber, donationType,donationReason) "
+                   + "VALUES(:userId, :donationAmount, :donationDate, :aadhaarNumber, :panCardNumber, :donationType, :donationReason)";
 
         Map<String, Object> m = new HashMap<>();
         m.put("userId", d.getUserId());
@@ -28,6 +28,7 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
         m.put("aadhaarNumber", d.getAadhaarNumber());
         m.put("panCardNumber", d.getPanCardNumber());
         m.put("donationType", d.getDonationType());
+        m.put("donationReason", d.getDonationReason());
 
         KeyHolder kh = new GeneratedKeyHolder();
         SqlParameterSource ps = new MapSqlParameterSource(m);
@@ -40,7 +41,7 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
     @Override
     public void update(Donation d) {
         String sql = "UPDATE donation SET userId=:userId, donationAmount=:donationAmount, donationDate=:donationDate, "
-                   + "aadhaarNumber=:aadhaarNumber, panCardNumber=:panCardNumber, donationType=:donationType "
+                   + "aadhaarNumber=:aadhaarNumber, panCardNumber=:panCardNumber, donationType=:donationType , donationReason=:donationReason"
                    + "WHERE donationId=:donationId";
 
         Map<String, Object> m = new HashMap<>();
@@ -50,6 +51,7 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
         m.put("aadhaarNumber", d.getAadhaarNumber());
         m.put("panCardNumber", d.getPanCardNumber());
         m.put("donationType", d.getDonationType());
+        m.put("donationReason", d.getDonationReason());
         m.put("donationId", d.getDonationId());
 
         getNamedParameterJdbcTemplate().update(sql, m);
@@ -68,14 +70,14 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
 
     @Override
     public Donation findById(Integer donationId) {
-        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType "
+        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType, d.donationReason "
                    + "FROM donation d WHERE d.donationId=?";
         return getJdbcTemplate().queryForObject(sql, new DonationRowMapper(), donationId);
     }
 
     @Override
     public List<Donation> findAll() {
-        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType, u.name " +
+        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType, d.donationReason, u.name " +
                      "FROM donation d " +
                      "INNER JOIN user u ON d.userId = u.userId";
 
@@ -84,15 +86,18 @@ public class DonationDAOImpl extends BaseDAO implements DonationDAO {
     
     @Override
     public List<Donation> findByProperty(String propName, Object propValue) {
-        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType "
+        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType, d.donationReason "
                    + "FROM donation d WHERE " + propName + " = ?";
         return getJdbcTemplate().query(sql, new DonationRowMapper(), propValue);
     }
 
     @Override
     public List<Donation> displayDonationHistoryList(int userId) {
-        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, d.aadhaarNumber, d.panCardNumber, d.donationType "
-                   + "FROM donation d WHERE d.userId = ?";
+        String sql = "SELECT d.donationId, d.userId, d.donationAmount, d.donationDate, " +
+                     "d.aadhaarNumber, d.panCardNumber, d.donationType, d.donationReason, u.name " +
+                     "FROM donation d " +
+                     "INNER JOIN user u ON d.userId = u.userId " +
+                     "WHERE d.userId = ?";
         return getJdbcTemplate().query(sql, new DonationRowMapper(), userId);
     }
 

@@ -1,14 +1,16 @@
 package com.yash.ngo.command;
 import java.sql.Date;
 
-public class DonationCommand {
+public class DonationCommand 
+{
 	private String name;
-	public String getName() {
+	public String getName() 
+	{
 		return name;
 	}
 
-
-	public void setName(String name) {
+	public void setName(String name) 
+	{
 		this.name = name;
 	}
 
@@ -19,82 +21,75 @@ public class DonationCommand {
     private String aadhaarNumber;
     private String panCardNumber;
     private String donationType;
-
-
-	public DonationCommand() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
+    private String donationReason;
+    
 	public Integer getUserId() {
 		return userId;
 	}
-
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
-
 	public Double getDonationAmount() {
 		return donationAmount;
 	}
-
 
 	public void setDonationAmount(Double donationAmount) {
 		this.donationAmount = donationAmount;
 	}
 
-
 	public Date getDonationDate() {
 		return donationDate;
 	}
-
 
 	public void setDonationDate(Date donationDate) {
 		this.donationDate = donationDate;
 	}
 
-
 	public String getAadhaarNumber() {
 		return aadhaarNumber;
 	}
-
 
 	public void setAadhaarNumber(String aadhaarNumber) {
 		this.aadhaarNumber = aadhaarNumber;
 	}
 
-
 	public String getPanCardNumber() {
 		return panCardNumber;
 	}
-
 
 	public void setPanCardNumber(String panCardNumber) {
 		this.panCardNumber = panCardNumber;
 	}
 
-
 	public String getDonationType() {
 		return donationType;
 	}
-
 
 	public void setDonationType(String donationType) {
 		this.donationType = donationType;
 	}
 
+	public String getDonationReason() {
+		return donationReason;
+	}
+
+	public void setDonationReason(String donationReason) {
+		this.donationReason = donationReason;
+	}
 
 	@Override
 	public String toString() {
 		return "DonationCommand [name=" + name + ", userId=" + userId + ", donationAmount=" + donationAmount
 				+ ", donationDate=" + donationDate + ", aadhaarNumber=" + aadhaarNumber + ", panCardNumber="
-				+ panCardNumber + ", donationType=" + donationType + "]";
+				+ panCardNumber + ", donationType=" + donationType + ", donationReason=" + donationReason + "]";
 	}
 
+	public DonationCommand() {
+		
+	}
 
-	
+    
 
 }

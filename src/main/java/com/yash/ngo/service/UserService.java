@@ -26,6 +26,7 @@ public interface UserService {
     public void changeLoginStatus(Integer userId, Integer loginStatus);
     public Integer countUsers();
 	public double getTotalDonationAmount();
+	public User getUserById(int userId);
 }
 
 

@@ -1,5 +1,5 @@
 <%-- testimonials.jsp --%>
-<section class="container testimonials-section my-5">
+<section class="container testimonials-section">
     <h2 class="text-center mb-4">What People Say About Us</h2>
     
     <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
