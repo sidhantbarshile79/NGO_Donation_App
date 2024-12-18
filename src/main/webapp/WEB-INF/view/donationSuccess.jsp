@@ -36,28 +36,39 @@
             background-color: var(--background-color);
             line-height: 1.6;
             color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-       .donation-success-wrapper 
-       {
-		    display: flex;                    
-		    justify-content: center;          
-		    align-items: center;           
-		    min-height: calc(100vh - 200px); 
-		    padding: 2rem 0;              
-		    width: 100%;                
-		    box-sizing: border-box;    
-		}
+        .donation-success-wrapper {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
 
         .success-container {
             width: 100%;
             max-width: 550px;
-            background-color: white;
+            background-color: #f4f4f4;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             padding: 3rem 2.5rem;
             text-align: center;
             transition: transform 0.3s ease;
+            margin: auto;
         }
 
         .success-container:hover {
@@ -132,6 +143,10 @@
 
     <div class="donation-success-wrapper">
         <div class="container">
+            <div class="logo-container">
+                <!-- Replace with your actual logo path -->
+                <%-- <img src="${pageContext.request.contextPath}/images/logo.png" alt="Organization Logo" class="logo"> --%>
+            </div>
             <div class="success-container">
                 <i class="fas fa-check-circle success-icon"></i>
                 <h1 class="success-title">Thank You for Your Donation!</h1>
@@ -147,16 +162,16 @@
                     </div>
                 </c:if>
 
-               <div class="action-buttons">
-    <a href="${pageContext.request.contextPath}/user_dashboard/${userId}" 
-       class="btn-donation-action btn-return">
-        <i class="fas fa-home"></i> Return to Dashboard
-    </a>
-    <a href="${pageContext.request.contextPath}/downloadReceipt?donationId=${donationId}" class="btn btn-primary">
-        <i class="fas fa-file-pdf"></i> Download Receipt
-    </a>
-</div>
-
+                <div class="action-buttons">
+                    <a href="${pageContext.request.contextPath}/user_dashboard/${userId}" 
+                       class="btn-donation-action btn-return">
+                        <i class="fas fa-home"></i> Return to Dashboard
+                    </a>
+                    <a href="${pageContext.request.contextPath}/downloadReceipt?donationId=${donationId}" 
+                       class="btn-donation-action btn-download">
+                        <i class="fas fa-file-pdf"></i> Download Receipt
+                    </a>
+                </div>
             </div>
         </div>
     </div>

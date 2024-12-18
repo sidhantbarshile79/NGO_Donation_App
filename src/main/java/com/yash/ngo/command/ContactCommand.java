@@ -1,6 +1,6 @@
 package com.yash.ngo.command;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 import com.yash.ngo.domain.Contact;
 
@@ -11,7 +11,7 @@ public class ContactCommand
 	private String email;
 	private String mobile;
 	private String message;
-	private LocalTime submitted_at;
+	private LocalDateTime submitted_at;
 	private Contact contact;
 	public int getContactId() {
 		return contactId;
@@ -43,10 +43,10 @@ public class ContactCommand
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public LocalTime getSubmitted_at() {
+	public LocalDateTime getSubmitted_at() {
 		return submitted_at;
 	}
-	public void setSubmitted_at(LocalTime submitted_at) {
+	public void setSubmitted_at(LocalDateTime submitted_at) {
 		this.submitted_at = submitted_at;
 	}
 	public Contact getContact() {

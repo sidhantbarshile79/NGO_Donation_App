@@ -1,6 +1,6 @@
 package com.yash.ngo.domain;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class Contact 
 {
@@ -9,7 +9,7 @@ public class Contact
 	private String email;
 	private String mobile;
 	private String message;
-	private LocalTime submitted_at;
+	private LocalDateTime submitted_at;
 	
 	
 	public Contact() 
@@ -68,12 +68,12 @@ public class Contact
 	}
 
 
-	public LocalTime getSubmitted_at() {
+	public LocalDateTime getSubmitted_at() {
 		return submitted_at;
 	}
 
 
-	public void setSubmitted_at(LocalTime submitted_at) {
+	public void setSubmitted_at(LocalDateTime submitted_at) {
 		this.submitted_at = submitted_at;
 	}
 
