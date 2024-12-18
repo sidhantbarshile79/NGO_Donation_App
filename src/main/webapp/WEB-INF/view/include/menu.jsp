@@ -79,7 +79,7 @@
                     <s:url var="users_url" value="/users"/>
                     <s:url var="donor_url" value="/donors"/>
                     <s:url var="donation_url" value="/donation"/>
-                   
+                   	<s:url var="message_url" value="/message" />
                     
                     <li class="nav-item">
                         <a class="nav-link" href="admin_dashboard${id}">Home</a>
@@ -92,6 +92,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="donation">Donation List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="message">Message</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout">Logout</a>

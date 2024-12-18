@@ -67,39 +67,6 @@ public class UserController
 
 
 
-//    @RequestMapping(value = "/login", method = RequestMethod.POST)
-//    public String handleLogin(@ModelAttribute("command") LoginCommand cmd, Model model, HttpSession session) 
-//    {
-//        try 
-//        {
-//            User loggedInUser  = userService.login(cmd.getLoginName(), cmd.getPassword());
-//
-//            if (loggedInUser  == null) {
-//                model.addAttribute("err", "Login failed. Please enter valid credentials.");
-//                return "login";
-//            } else {
-//                // Success
-//                session.setAttribute("userId", loggedInUser .getUserId());
-//                int id = Integer.parseInt(session.getAttribute("userId").toString());
-//
-//                if (loggedInUser .getRole().equals(UserService.ROLE_ADMIN)) {
-//                    addUserInSession(loggedInUser , session);
-//                    return "redirect:admin_dashboard";
-//                } else if (loggedInUser .getRole().equals(UserService.ROLE_USER)) {
-//                    addUserInSession(loggedInUser , session);
-//                    return "redirect:user_dashboard/"+id; // Redirect to donation form
-//                } else {
-//                    model.addAttribute("err", "Invalid user role.");
-//                    return "login";
-//                }
-//            }
-//        } catch (UserBlockedException ex) 
-//        {
-//            model.addAttribute("err", ex.getMessage());
-//            return "index";
-//        }
-//    }
-	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String handleLogin(@ModelAttribute("command") LoginCommand cmd, Model model, HttpSession session) {
@@ -218,15 +185,6 @@ public class UserController
     }
 
 
-
-
-
-    
-	
-
-    
-
-
 	  @GetMapping("/users") 
 	  public String listUsers(Model model) {
 		  try {
@@ -257,8 +215,10 @@ public class UserController
 	  }
 	  
 	  @GetMapping("/user_dashboard/{id}")
-	  public String showUserDashboard(@PathVariable Integer id, Model model) {
-	      try {
+	  public String showUserDashboard(@PathVariable Integer id, Model model) 
+	  {
+	      try 
+	      {
 	          User user = userService.getUserById(id);
 	          model.addAttribute("user", user);
 
@@ -269,16 +229,20 @@ public class UserController
 	          model.addAttribute("totalDonation", totalDonation);
 
 	          return "dashboard_user";
-	      } catch (Exception e) {
+	      } 
+	      catch (Exception e) 
+	      {
 	          model.addAttribute("error", "Error fetching user dashboard: " + e.getMessage());
 	          return "dashboard_user";
 	      }
 	  }
 	  
 	  @RequestMapping("/donationSuccess")
-	  public String showDonationSuccess(HttpSession session, Model model) {
+	  public String showDonationSuccess(HttpSession session, Model model) 
+	  {
 	      Donation pendingDonation = (Donation) session.getAttribute("pendingDonation");
-	      if (pendingDonation != null) {
+	      if (pendingDonation != null) 
+	      {
 	          model.addAttribute("donationId", pendingDonation.getDonationId());
 	          model.addAttribute("userId", session.getAttribute("userId"));
 	      }
@@ -286,11 +250,9 @@ public class UserController
 	  }
 
 
-
     private void addUserInSession(User user, HttpSession session) {
         session.setAttribute("user", user);
         session.setAttribute("userId", user.getUserId());
         session.setAttribute("role", user.getRole());
     }
-
 }

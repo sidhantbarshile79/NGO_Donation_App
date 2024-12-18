@@ -1,6 +1,7 @@
 package com.yash.ngo.domain;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
+
 
 public class Contact 
 {
@@ -9,7 +10,7 @@ public class Contact
 	private String email;
 	private String mobile;
 	private String message;
-	private LocalDateTime submitted_at;
+	private Timestamp submitted_at;
 	
 	
 	public Contact() 
@@ -68,12 +69,12 @@ public class Contact
 	}
 
 
-	public LocalDateTime getSubmitted_at() {
+	public Timestamp getSubmitted_at() {
 		return submitted_at;
 	}
 
 
-	public void setSubmitted_at(LocalDateTime submitted_at) {
+	public void setSubmitted_at(Timestamp submitted_at) {
 		this.submitted_at = submitted_at;
 	}
 

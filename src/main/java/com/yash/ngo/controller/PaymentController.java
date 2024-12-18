@@ -148,7 +148,7 @@ public class PaymentController {
     }
 
     @GetMapping("/downloadReceipt")
-    public void downloadReceipt(@RequestParam Integer donationId, HttpSession session, HttpServletResponse response) {
+    public void downloadReceipt(@RequestParam("donationId") Integer donationId, HttpSession session, HttpServletResponse response) {
         try {
             Donation donation = donationService.findById(donationId);
             User user = (User) session.getAttribute("currentUser");
@@ -178,4 +178,5 @@ public class PaymentController {
             e.printStackTrace();
         }
     }
+
 }

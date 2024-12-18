@@ -1,5 +1,8 @@
 package com.yash.ngo.command;
 import java.sql.Date;
+import java.time.LocalDateTime;
+
+import com.yash.ngo.domain.Contact;
 
 public class DonationCommand 
 {
@@ -22,6 +25,9 @@ public class DonationCommand
     private String panCardNumber;
     private String donationType;
     private String donationReason;
+	private String mobile;
+	private String message;
+	private String email;
     
 	public Integer getUserId() {
 		return userId;
@@ -86,10 +92,10 @@ public class DonationCommand
 				+ panCardNumber + ", donationType=" + donationType + ", donationReason=" + donationReason + "]";
 	}
 
-	public DonationCommand() {
+	public DonationCommand() 
+	{
 		
 	}
-
     
 
 }

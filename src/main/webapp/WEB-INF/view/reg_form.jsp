@@ -224,9 +224,9 @@
             // Validation rules for each form field
             rules: {
                 "user.name": {
-                    required: true,
+                	required: true,
                     minlength: 2,
-                    maxlength: 50,
+                    maxlength: 50,                    
                     pattern: /^[a-zA-Z\s]+$/
                 },
                 "user.phone": {
